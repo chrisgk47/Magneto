@@ -1,0 +1,9 @@
+<h1>Users Listings<h1>
+
+<h3>Bookmarks</h3>
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= link_to bookmark.listing_id.title, listing_path(listing.id) %></li>
+  <% end %>
+</ul>
