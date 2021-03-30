@@ -4,7 +4,8 @@
 # chris = User.create(username: "chris123", password: "abc123", name: "Christopher Kim", age: 30, education: "Some College")
 
 # listing1 = Listing.create(title: "Electrician", position: "", company: "G.E.", location: "Springfield, Ohio", url: "www.pepperpotelect.com")
-            
+User.destroy_all
+           
  
 cat1 = Category.create(field: "Hospitality")
 cat2 = Category.create(field: "Education")
