@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 2021_03_29_194713) do
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.string "position"
+    t.string "employment_type"
     t.string "company"
     t.string "location"
-    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
