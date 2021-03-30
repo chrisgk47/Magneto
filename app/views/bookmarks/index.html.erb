@@ -1,2 +1,8 @@
-<h1>Bookmark Index<h1>
+<h1>My Bookmarked Listings<h1>
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= link_to bookmark.listing.title<%= bookmark.status %>, <%= listing_path(listing.id) %></li>
+  <% end %>
+</ul>
 

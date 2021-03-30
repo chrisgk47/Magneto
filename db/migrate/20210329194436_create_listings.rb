@@ -6,6 +6,7 @@ class CreateListings < ActiveRecord::Migration[6.1]
       t.string :employment_type
       t.string :company
       t.string :location
+      t.integer :category_id
       
 
       t.timestamps

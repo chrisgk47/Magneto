@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_03_29_194713) do
     t.string "employment_type"
     t.string "company"
     t.string "location"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

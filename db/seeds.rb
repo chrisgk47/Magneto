@@ -4,8 +4,12 @@
 # chris = User.create(username: "chris123", password: "abc123", name: "Christopher Kim", age: 30, education: "Some College")
 
 # listing1 = Listing.create(title: "Electrician", position: "", company: "G.E.", location: "Springfield, Ohio", url: "www.pepperpotelect.com")
-User.destroy_all
-           
+# User.destroy_all
+Category.destroy_all
+Listing.destroy_all
+
+
+
  
 cat1 = Category.create(field: "Hospitality")
 cat2 = Category.create(field: "Education")
@@ -18,34 +22,41 @@ cat8 = Category.create(field: "Environment")
 cat9 = Category.create(field: "Communications")
 cat10 = Category.create(field: "Business")
 
+    
 
-50.times do
-    Listing.create({
-        title: Faker::Job.title,
-        position: Faker::Job.position,
-        employment_type: Faker::Job.employment_type,
-        company: Faker::Company.name,
-        location: Faker::Address.city 
-    })
-end
+    50.times do
+        Listing.create({
+            title: Faker::Job.title,
+            position: Faker::Job.position,
+            employment_type: Faker::Job.employment_type,
+            company: Faker::Company.name,
+            location: Faker::Address.city, 
+            category_id: Category.all.sample.id  
 
-10.times do
-    User.create ({
-        username: Faker::Internet.username(specifier: 5..10),
-        password: Faker::Internet.password(min_length: 5),
-        name: Faker::Artist.name ,
-        age: rand(19...100),
-        education: Faker::Job.education_level
+        })
+    end
 
-    })
-end
+    10.times do
+        User.create ({
+            username: Faker::Internet.username(specifier: 5..10),
+            password: Faker::Internet.password(min_length: 5),
+            name: Faker::Artist.name,
+            age: rand(19...75),
+            education: Faker::Job.education_level
+        })
+    end
 
-50.times do
-    Bookmark.create({
-        user_id: rand(1..10),
-        listing_id: rand(1..50),
-        status: ["Pending", "Submitted", "Under Review"].sample
-    })
-end
+    10.times do
+        UserCategory.create(user_id: User.all.sample.id, category_id: Category.all.sample.id)
+    end
+
+    50.times do
+        Bookmark.create({
+            user_id: User.all.sample.id,
+            listing_id: Listing.all.sample.id,
+            status: ["Pending", "Submitted", "Under Review"].sample
+        })
+    end
+
 
 puts "seeded"
