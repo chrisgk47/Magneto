@@ -1,9 +1,19 @@
-<h1>Users Listings<h1>
+<h1>User Menu<h1>
 
-<h3>Bookmarks</h3>
 
-<ul>
-  <% @bookmarks.each do |bookmark| %>
-    <li><%= link_to bookmark.listing_id.title, listing_path(listing.id) %></li>
-  <% end %>
+<ul> 
+<% if @user.bookmarks.count == 0 %>
+<p>"There are no listings bookmarked" </p>
+<br>
+<p> "Would like to view the listings?" </p>
+<br>
+<%=link_to "View Listings", listings_path %>
+<% else %>
+<% @user.bookmarks.each do |bookmark|%>
+<%= link_to bookmark.listing.title, listing_path(bookmark.listing.id)%></li>
+<% end %>
+<% end %>
 </ul>
+
+
+<%= button_to "Change Password", edit_user_path %>

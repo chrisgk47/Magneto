@@ -1,0 +1,11 @@
+<h1>Listings Index</h1>
+
+<ul>
+<% @listings.each do |listing| %>
+    <li><%= link_to listing.title, listing_path(listing.id) %><br>
+        <%= listing.employment_type %></li>
+   <% end %>
+</ul>
+
+        
+    

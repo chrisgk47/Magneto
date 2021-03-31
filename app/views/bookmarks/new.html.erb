@@ -1,0 +1,10 @@
+<h1>Bookmark New Page</h1>
+
+<%= form_for @bookmark do |f| %>
+	   <%= f.label :listing %>
+	   <br>
+	   <%= f.collection_select :listing_id, Listing.all, :id, :title %> 
+	   <br>
+	   <%= f.submit %>
+	 <% end %>
+   

@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+    def show
+        @user = User.find(params[:id])
+        user_bookmarks = @user.bookmarks
+    end
+
     def new
         @user = User.new
     end
@@ -28,6 +33,9 @@ class UsersController < ApplicationController
             redirect_to edit_user_path
         end    
     end
+
+   
+
 
     private
 

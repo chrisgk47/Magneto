@@ -1,0 +1,15 @@
+<h1>Listing</h1>
+
+
+<ul>  
+<li> Title: <%= @listing.title %></li>
+<li> Position: <%= @listing.position %></li>
+<li> Employment Type: <%= @listing.employment_type %></li>
+<li> Company: <%= @listing.company %></li>
+<li> Location: <%= @listing.location %></li> 
+</ul>
+
+<%=button_to "Back to All Listings", listings_path, method: :get %>
+
+
+
