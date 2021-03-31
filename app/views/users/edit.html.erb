@@ -1,0 +1,15 @@
+<h1>Please Enter Your New Password<h1>
+
+<%= form_for(@user) do |f| %>
+    <div class="field">
+      <%= f.label :password, "Password" %><br />
+      <%= f.password_field :password, :autocomplete => "off"  %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="action_container">
+      <%= f.submit %>
+    </div>
+  <% end %>

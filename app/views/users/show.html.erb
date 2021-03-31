@@ -3,17 +3,15 @@
 
 <ul> 
 <% if @user.bookmarks.count == 0 %>
-<p>"There are no listings bookmarked" </p>
-<br>
-<p> "Would like to view the listings?" </p>
-<br>
+<p>"There are no listings bookmarked"</p>
 <%=link_to "View Listings", listings_path %>
 <% else %>
 <% @user.bookmarks.each do |bookmark|%>
-<%= link_to bookmark.listing.title, listing_path(bookmark.listing.id)%></li>
+<li><%= link_to bookmark.listing.title, listing_path(bookmark.listing.id) %></li>
 <% end %>
 <% end %>
 </ul>
 
+<%= button_to "Change Password", edit_user_path(@user.id), method: :get%>
+<%= button_to "Delete Account", @user, method: :delete %>
 
-<%= button_to "Change Password", edit_user_path %>
