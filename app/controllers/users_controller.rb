@@ -1,23 +1,35 @@
 class UsersController < ApplicationController
     # before_action :find_user, only: [:show, :edit, :update, :destroy]
+     skip_before_action :logged_in?, only: [:new, :create]
 
     def new
         @user = User.new
     end
 
     def create
-        @user = User.create(user_params)
-        if @user.valid?
-            redirect_to user_path(@user.id)
+        user = User.create(user_params)
+
+        if user.valid?
+            cookies[:user_id] = user.id
+            redirect_to user
         else 
-            flash[:errors] = @user.errors.full_messages 
+            flash[:errors] = flash.errors.full_messages 
             redirect_to new_user_path
         end
+    end
+  
+    def bookmark(listing)
+        bookmarks.new(listing_id: listing.id)
     end
 
     def show
         @user = User.find(params[:id])
-        
+        if @current_user == @user 
+            render :show
+          else  
+            flash[:message] = "You can only access your own profile"
+            redirect_to users_path
+          end  
     end
 
     def edit
@@ -56,3 +68,14 @@ class UsersController < ApplicationController
     end
 end
 
+
+# def create
+#     @user = User.create(user_params)
+    
+#     if @user.valid?
+#         redirect_to user_path(@user.id)
+#     else 
+#         flash[:errors] = @user.errors.full_messages 
+#         redirect_to new_user_path
+#     end
+# end

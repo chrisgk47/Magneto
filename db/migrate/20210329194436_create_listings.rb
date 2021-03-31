@@ -8,7 +8,6 @@ class CreateListings < ActiveRecord::Migration[6.1]
       t.string :location
       t.integer :category_id
       
-
       t.timestamps
     end
   end

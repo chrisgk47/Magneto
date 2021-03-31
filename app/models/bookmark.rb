@@ -7,13 +7,5 @@ class Bookmark < ApplicationRecord
     # end
 
     
-    #  def new
-    #    @bookmark = Bookmark.new
-
-    #    @users = User.all
-
-    #    @listings = Listing.all
-    #  end
-    
 
 end

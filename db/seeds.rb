@@ -36,7 +36,7 @@ cat10 = Category.create(field: "Business")
         })
     end
 
-    10.times do
+    5.times do
         User.create ({
             username: Faker::Internet.username(specifier: 5..10),
             password: Faker::Internet.password(min_length: 5),
