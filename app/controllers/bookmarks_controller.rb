@@ -31,10 +31,16 @@
         end
     end
 
+    # def bookmark_listing
+    #     b1 = @current_user.bookmarks.select{|bookmark| bookmark.listing_id == @listing.id}
+    #     bookmarked = b1[0]
+    # end
 
     def destroy
-        @bookmark = Bookmark.find(params[:id])
-        @bookmark.listing.destroy
+        @bookmark = Bookmark.all.find(params[:id])
+        # @current_user.bookmarks.select{|bookmark| bookmark.listing_id == @listing.id}[0].id)
+        @bookmark.destroy
+        redirect_to user_path(@current_user)
     end
     
 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index]
   resources :bookmarks, only: [:index, :show, :new, :create]
   resources :listings, only: [:index, :show]
   resources :user_categories, only: [:index]
