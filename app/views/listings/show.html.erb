@@ -1,12 +1,27 @@
-<h1>Job Listing for <%=@listing.title%></h1>
 
-
+<h1><%=@listing.title%> </h1>
 <ul>  
-<li> <h3>Position: <%= @listing.position %></h3></li>
+<li> <h3>Position Available: <%= @listing.position %></h3></li>
 <li> <h3>Employment Type: <%= @listing.employment_type %></h3></li>
 <li> <h3>Company: <%= @listing.company %></h3></li>
 <li> <h3>Location: <%= @listing.location %></h3></li> 
+<h3> Please send your resume via email </h3>
 </ul>
+<% b1 = @current_user.bookmarks.select{|bookmark| bookmark.listing_id == @listing.id} %>
+<% bookmarked = b1[0] %>
+<% if @current_user.listings.include?(@listing) %>
+    <%= form_tag "/bookmarks/#{bookmarked.id}", method: :delete do %>
+        <%= hidden_field_tag :user_id, @current_user.id %>
+        <%= submit_tag "Delete Bookmark"%>
+    <% end %> 
+<% else %>
+<%= form_tag '/bookmarks', method: "post" do %>
+    <%= hidden_field_tag :listing_id, @listing.id %>
+    <%= hidden_field_tag :user_id, @current_user.id %>
+    <%= submit_tag "Create Bookmark"%>
+<% end %> 
+<br>
+<% end %>
 
 <br>
 <%=button_to "Back To Home", user_path(@current_user), method: :get %>
@@ -16,12 +31,7 @@
 
 
 
-<%= form_tag '/bookmarks', method: "post" do %>
-    <%= hidden_field_tag :listing_id, @listing.id %>
-    <%= hidden_field_tag :user_id, @current_user.id %>
-    <%= submit_tag "Create Bookmark"%>
-<% end %> 
-<br>
+
 
 
 
