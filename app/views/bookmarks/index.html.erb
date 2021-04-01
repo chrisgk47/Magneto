@@ -1,7 +1,7 @@
 <h1>My Bookmarked Listings<h1>
 
 <ul>
-  <% @user.bookmarks.each do |bookmark| %>
+  <% @current_user.bookmarks.each do |bookmark| %>
     <li><%= link_to bookmark.listing.title, listing_path(bookmark.listing.id) %>  <br>Status:    <%=bookmark.status%></li>
   <% end %>
 </ul>

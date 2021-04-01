@@ -1,17 +1,17 @@
 <h1>User Menu<h1>
 
-
 <ul> 
 <% if @user.bookmarks.count == 0 %>
 <p>"There are no listings bookmarked"</p>
-<%=link_to "View Listings", listings_path %>
 <% else %>
 <% @user.bookmarks.each do |bookmark|%>
 <li><%= link_to bookmark.listing.title, listing_path(bookmark.listing.id) %></li>
 <% end %>
 <% end %>
 </ul>
-
-<%= button_to "Change Password", edit_user_path(@user.id), method: :get%>
-<%= button_to "Delete Account", @user, method: :delete %>
+<ul>
+<li><%= button_to "Browse Listings by Category", categories_path, method: :get %></li>
+<li><%=button_to "View Listings", listings_path, method: :get %></li>
+<li><%= button_to "Change Password", edit_user_path(@user.id), method: :get%></li>
+<li><%= button_to "Delete Account", @user, method: :delete %></li>
 

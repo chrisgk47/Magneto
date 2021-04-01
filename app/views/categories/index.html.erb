@@ -1,16 +1,64 @@
 <h1>Categories</h1>
 
+<%= link_to "Back To Home", user_path(@current_user) %>
+<br>
+<ul>
+<h1>Hospitality</h1><% Category.all[0].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
 
-<ul></ul>
-<% %>
+<ul>
+<h1>Education</h1><% Category.all[1].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
 
- "Hospitality"
- "Education"
-: "Engineering" 
-: "Journalism"
-: "Manufacturing"
-: "Transportation"
-: "Government"
-: "Environment"
-: "Communications"
-: "Business"
+<ul>
+<h1>Engineering</h1><% Category.all[2].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
+
+<ul>
+<h1>Journalism</h1><% Category.all[3].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
+
+<ul>
+<h1>Manufacturing</h1><% Category.all[4].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
+
+<ul>
+<h1>Transportation</h1><% Category.all[5].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
+
+<ul>
+<h1>Government</h1><% Category.all[6].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
+
+<ul>
+<h1>Environment</h1><% Category.all[7].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
+
+<ul>
+<h1>Communications</h1><% Category.all[8].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
+
+<ul>
+<h1>Business</h1><% Category.all[9].listings.each do |listing| %>
+<li><%= link_to listing.title, listing_path(listing.id) %></li>
+<% end %>
+</ul>
+
