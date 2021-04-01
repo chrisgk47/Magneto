@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   delete '/bookmarks/:id', to: 'bookmarks#destroy'
   get '/login', to: 'sessions#new_login', as: "new_login"
   post '/login', to: 'sessions#login'
-
+  delete '/logout', to: 'sessions#destroy'
 end
