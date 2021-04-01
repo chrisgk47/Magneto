@@ -1,16 +1,5 @@
 class UserCategoriesController < ApplicationController
 
-    
-
-
-    def new
-        @user_category = UserCategory.new
-    end
-
-   
-
-
-  
-
-   
+   def index
+   end
 end

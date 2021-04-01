@@ -1,17 +1,23 @@
 <div class="form-container">
-  <h1>Login</h1>
-
+<h1>Welcome to Job Magnet</h1>  
+<br>
+<h4>Please Login or Signup </h4>
   <%= form_for :session, url: "/login", html: {class: 'form-basic'} do |f| %>
     <div class='form-input'>
-      <%= f.label :username %>
+      <h2><%= f.label :username %></h2>
       <%= f.text_field :username %>
     </div>
-   
     <div class='form-input'>
-      <%= f.label :password %>
-      <%= f.text_field :password %>
+      <h2><%= f.label :password %></h2>
+      <%= f.password_field :password, :autocomplete => "off"  %>
     </div>
      <br>
     <%= f.submit "Log In" %>
+    <br>
+    <br>
+
   <% end %>
+  <div>
+  <%= button_to "Signup", new_user_path, method: :get %>
+  </div>
 </div>

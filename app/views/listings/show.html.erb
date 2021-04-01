@@ -1,23 +1,27 @@
-<h1>Listing</h1>
+<h1>Job Listing for <%=@listing.title%></h1>
 
 
 <ul>  
-<li> Title: <%= @listing.title %></li>
-<li> Position: <%= @listing.position %></li>
-<li> Employment Type: <%= @listing.employment_type %></li>
-<li> Company: <%= @listing.company %></li>
-<li> Location: <%= @listing.location %></li> 
+<li> <h3>Position: <%= @listing.position %></h3></li>
+<li> <h3>Employment Type: <%= @listing.employment_type %></h3></li>
+<li> <h3>Company: <%= @listing.company %></h3></li>
+<li> <h3>Location: <%= @listing.location %></h3></li> 
 </ul>
 
-
+<br>
+<%=button_to "Back To Home", user_path(@current_user), method: :get %>
+<br>
 <%=button_to "Back to All Listings", listings_path, method: :get %>
+<br>
+
 
 
 <%= form_tag '/bookmarks', method: "post" do %>
     <%= hidden_field_tag :listing_id, @listing.id %>
     <%= hidden_field_tag :user_id, @current_user.id %>
     <%= submit_tag "Create Bookmark"%>
-<% end %>
+<% end %> 
+<br>
 
 
 

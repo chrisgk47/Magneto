@@ -8,5 +8,7 @@ class User < ApplicationRecord
     has_many :listings, through: :bookmarks
 
     has_secure_password
+
+
     
 end

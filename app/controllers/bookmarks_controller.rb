@@ -32,22 +32,10 @@
     end
 
 
-    # def edit
-    #     @bookmark = Bookmark.find(params[:id])
-    # end
-
-        
-    # def update
-    #     @bookmark = Bookmark.find(params[:id])
-    #     @bookmark.update(bookmark_params)
-    #     if @bookmark.valid?
-    #         redirect_to bookmark_path(@bookmark.id)
-    #     else
-    #         flash[:error] = @bookmark.errors.full_messages
-    #         redirect_to edit_bookmark_path
-    #     end
-    # end
-
+    def destroy
+        @bookmark = Bookmark.find(params[:id])
+        @bookmark.listing.destroy
+    end
     
 
     private
@@ -58,5 +46,3 @@
     end
 end
 
-
-# :user_id, :status
