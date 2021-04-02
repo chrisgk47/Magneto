@@ -13,10 +13,41 @@
  *= require_tree .
  *= require_self
  */
-  body {
+ /* "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4UXb6GXQhrn0YZ_t-jh4AsTtfQK07K7INHwe0Uu3o7DqSzdZp-cTzlbx8fAT3HlGXwGs&usqp=CAU */
+ 
+html { 
+  background: url('https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/7fdfa5fa5b93e123a3f43eb97d431f1b/large.JPG') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+  /* body {
+      
       background-color: #a4ebf3;
-      color: rgb(14, 54, 31);
-      /* background: url('https://learning-center.homesciencetools.com/wp-content/uploads/all-about-magnets-thumbnail-1280x720.jpg'); */
-    } 
+      color: rgb(14, 54, 31); */
+      
+      /* background-image: url('https://learning-center.homesciencetools.com/wp-content/uploads/all-about-magnets-thumbnail-1280x720.jpg'); */
+    /* }  */
 
+    /* head { */
+      /* padding: 15px;
+      margin: 15px;
+      background-color: #3663e0; */
+      /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOM7jMejsMLMR34Eduf3X0koM92Svi2B_boXgKNDho2_zpYtJiSaQ3JWeqK2cFO1M5dw8&usqp=CAU"); */
+      /* border: 1px solid black;
+      border-radius: 20px;
+      font-size: 1.5em; */
+    /* }  */
 
+  /* .nav ul li {
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  .home_main_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  } */
+   

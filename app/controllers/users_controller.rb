@@ -7,13 +7,13 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.create(user_params)
+        @user = User.create(user_params)
 
-        if user.valid?
-            cookies[:user_id] = user.id
+        if @user.valid?
+            cookies[:user_id] = @user.id
             redirect_to user
         else 
-            flash[:errors] = flash.errors.full_messages 
+            flash[:errors] = @user.errors.full_messages 
             redirect_to new_user_path
         end
     end

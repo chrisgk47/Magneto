@@ -1,9 +1,9 @@
-<h1>Job Listings</h1>
+<h1>Magnetos Job Listings</h1>
 <%= link_to "Back To Home", user_path(@current_user) %>
 <ul>
 <% @listings.each do |listing| %>
-    <li><%= link_to listing.title, listing_path(listing.id) %><br>
-        <%= listing.employment_type %></li>
+    <li><h3><%= link_to listing.title, listing_path(listing.id) %><br>
+        <%= listing.employment_type %></h3></li>
    <% end %>
 </ul>
 

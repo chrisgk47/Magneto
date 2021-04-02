@@ -1,24 +1,30 @@
-<h1>User Menu<h1>
 <div>
-<ul>
-<h5>Bookmarked Job Listings</h5> 
-<% if @user.bookmarks.count == 0 %>
-<li><p>"There are no listings bookmarked"</p></li>
-<% else %>
-<% @user.bookmarks.each do |bookmark| %>
-<li><h6><%= link_to bookmark.listing.title, listing_path(bookmark.listing.id) %></h6></li>
-<% end %>
-<% end %>
-</ul>
+    <div>
+        <h1>Welcome <%=@current_user.username%> to Magneto<br> The No.1 Job Site</h1>
+    </div>
+    <hr>
+    <br>
+
+    <div class='nav_links'>
+    <h2>Bookmarked Job Listings:</h2>
+    <% if @user.bookmarks.count == 0 %>
+        <p>"There are no listings bookmarked"</p>
+    <% else %>
+        <% @user.bookmarks.each do |bookmark| %>
+        <h3><%= link_to bookmark.listing.title, listing_path(bookmark.listing.id) %></h3>
+        <% end %>
+    <% end %>
+    </div>
 </div>
 
 <div>
-<ul>
-<h5>User Options<h5>
-<li><%= button_to "Browse Listings by Category", categories_path, method: :get %></li>
-<li><%=button_to "View Listings", listings_path, method: :get %></li>
-<li><%= button_to "Change Password", edit_user_path(@user.id), method: :get%></li>
-<li><%= button_to "Delete Account", @user, method: :delete %></li>
-<li><%= button_to "Logout", logout_path, method: :delete %></li>
-</ul>
+<br>
+<hr>
+<h2>User Options<h2>
+<%= button_to "Browse Listings by Category", categories_path, method: :get %><br>
+<%=button_to "View Listings", listings_path, method: :get %><br>
+<%= button_to "Change Password", edit_user_path(@user.id), method: :get%><br>
+<%= button_to "Delete Account", @user, method: :delete %><br>
+<%= button_to "Logout", logout_path, method: :delete %><br>
+
 </div>
